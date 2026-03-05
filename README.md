@@ -1,0 +1,2 @@
+# ai-commit
+ai-commit
