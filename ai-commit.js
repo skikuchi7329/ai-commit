@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+require('dotenv/config');
 const { execSync } = require('child_process');
 const readline = require('readline');
 const Anthropic = require('@anthropic-ai/sdk');
@@ -69,8 +70,8 @@ async function generateCommitMessage(client, diff) {
 async function main() {
   // Check API key
   if (!process.env.ANTHROPIC_API_KEY) {
-    console.error('\x1b[31mError: ANTHROPIC_API_KEY is not set.\x1b[0m');
-    console.error('Set it with: export ANTHROPIC_API_KEY=sk-ant-xxxxx');
+    console.error('\x1b[31mError: ANTHROPIC_API_KEY が設定されていません。\x1b[0m');
+    console.error('.envファイルにANTHROPIC_API_KEYを設定するか、export ANTHROPIC_API_KEY=sk-ant-xxxxx を実行してください');
     process.exit(1);
   }
 
