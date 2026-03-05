@@ -6,6 +6,16 @@ AI-powered commit message generator using Claude API. Analyzes your staged chang
 
 ```bash
 cd ai-commit && npm install
+```
+
+### API key configuration
+
+```bash
+# Option 1: .env file (recommended)
+cp .env.example .env
+# Edit .env and set ANTHROPIC_API_KEY=sk-ant-xxxxx
+
+# Option 2: environment variable (overrides .env)
 export ANTHROPIC_API_KEY=sk-ant-xxxxx
 ```
 
