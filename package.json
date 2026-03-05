@@ -1,0 +1,11 @@
+{
+  "name": "ai-commit",
+  "version": "1.0.0",
+  "description": "AI-powered commit message generator using Claude API",
+  "bin": {
+    "ai-commit": "./ai-commit.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0"
+  }
+}
