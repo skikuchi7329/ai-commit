@@ -2,7 +2,7 @@
 
 const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '.env') });
-const { execSync } = require('child_process');
+const { execSync, execFileSync } = require('child_process');
 const readline = require('readline');
 const Anthropic = require('@anthropic-ai/sdk');
 
@@ -125,8 +125,7 @@ async function main() {
 
   // Execute commit
   try {
-    const escaped = message.replace(/"/g, '\\"');
-    const result = execSync(`git commit -m "${escaped}"`, { encoding: 'utf-8' });
+    const result = execFileSync('git', ['commit', '-m', message], { encoding: 'utf-8' });
     console.log(result);
 
     // Show commit hash
